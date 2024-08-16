@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.babbo.mapper.BabboMapper">
+    <resultMap type="com.babbo.dto.BabboUserDTO" id="user">
+        <id column="USER_ID" property="userId"/>
+        <result column="USER_PASSWORD" property="userPassword"/>
+        <result column="USER_NAME" property="userName"/>
+        <result column="USER_NICK" property="userNick"/>
+        <result column="USER_ADDRESS" property="userAddress"/>
+        <result column="USER_GENDER" property="userGender"/>
+    </resultMap>
+   
+   <insert id="userRegister" parameterType="com.babbo.dto.BabboUserDTO">
+       INSERT INTO BABBO_USER(USER_ID, USER_PASSWORD, USER_NAME, USER_NICK, USER_ADDRESS, USER_GENDER)
+       VALUES ( #{userId}, #{userPassword}, #{userName}, #{userNick}, #{userAddress}, #{userGender})
+   </insert>
+</mapper>
