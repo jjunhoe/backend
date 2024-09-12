@@ -29,5 +29,11 @@ public class MainController {
 		return "회원가입 완료";
 	}
 	
+	@PostMapping("/user/check")
+	public String userCheck(@RequestBody String userId ) {
+		System.out.println(userId);
+		babboSerivce.userCheck(userId);
+		return null;
+	}
 	
 }

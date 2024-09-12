@@ -7,4 +7,6 @@ import com.babbo.dto.BabboUserDTO;
 @Mapper
 public interface BabboMapper {
     void userRegister(BabboUserDTO user);
+
+	void userCheck(String userId);
 }

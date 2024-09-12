@@ -10,10 +10,17 @@
         <result column="USER_NICK" property="userNick"/>
         <result column="USER_ADDRESS" property="userAddress"/>
         <result column="USER_GENDER" property="userGender"/>
+        <result column="USER_BIRTHDAY" property="userBirthday"/>
+        <result column="USER_NATIONALITY" property="userNationality"/>       
     </resultMap>
    
    <insert id="userRegister" parameterType="com.babbo.dto.BabboUserDTO">
-       INSERT INTO BABBO_USER(USER_ID, USER_PASSWORD, USER_NAME, USER_NICK, USER_ADDRESS, USER_GENDER)
-       VALUES ( #{userId}, #{userPassword}, #{userName}, #{userNick}, #{userAddress}, #{userGender})
+       INSERT INTO DEAJUN_USER(USER_ID, USER_PASSWORD, USER_NAME, USER_NICK, USER_ADDRESS, USER_GENDER, USER_BIRTHDAY, USER_NATIONALITY)
+       VALUES ( #{userId}, #{userPassword}, #{userName}, #{userNick}, #{userAddress}, #{userGender}, #(userBirthday), #(userNationality))
    </insert>
+   
+   <select id="userCheck">
+   		SELECT * FROM DEAJUN_USER
+   </select>
+   
 </mapper>

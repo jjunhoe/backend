@@ -17,6 +17,10 @@ public class BabboService {
 	public void userRegister(BabboUserDTO user) {
 		mapper.userRegister(user);
 	}
+
+	public void userCheck(String userId) {
+		mapper.userCheck(userId);
+	}
 	
 	
 	
